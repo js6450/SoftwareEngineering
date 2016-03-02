@@ -11,8 +11,7 @@ public class ConnectFourView extends View{
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
 
 	@Override
@@ -24,8 +23,11 @@ public class ConnectFourView extends View{
 		
 		ArrayList<String> boardview = new ArrayList<String>();
 		
+		//add column numbers at the bottom of board
 		boardview.add("|0||1||2||3||4||5||6||7||8|");
 		boardview.add("---------------------------");
+		
+		//recursively generate board
 		for(int i = 0; i < numR; i++){
 			String temp = "";
 			for(int j = 0; j < numC; j++){
@@ -34,6 +36,7 @@ public class ConnectFourView extends View{
 			boardview.add(temp);
 		}
 		
+		//print board
 		int boardLen = boardview.size() - 1;
 		for(int i = 0; i < boardview.size(); i++){
 			System.out.println(boardview.get(boardLen-i));
@@ -41,6 +44,7 @@ public class ConnectFourView extends View{
 		
 	}
 	
+	//print R for RED tokens and B for BLUE tokens
 	private String printToken(Token token){
 		String printT = " ";
 		if(token == Token.RED){
